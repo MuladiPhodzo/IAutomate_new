@@ -1,7 +1,8 @@
 
 <template>
 	<q-layout view="hHh lpr fFf">
-		<div >
+		<div class="q-pa-md" style="font-size: x-large;">
+			Marketplace
 				<!-- Show loading message while data is being fetched -->
 			<div v-if="loading" class="loading-state" align="center" style="padding: 30%;">
 				<q-icon name="update" size="150px" color="grey-5" />
@@ -26,6 +27,14 @@
 
 			<q-separator/>
 
+			<div 
+			class="q-pa-md"
+			style="font-size: x-large;"
+			> 
+			Offers
+			<q-card rounded class="offers-card q-pa-md" style="color: #496173; font-size: medium;"> Sale </q-card>
+		 </div>
+			
 
 		</div>
 	</q-layout>
