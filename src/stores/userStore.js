@@ -13,7 +13,7 @@ export const useUserStore = defineStore('userStore', () => {
   const router = useRouter();
   
   function setUserID(id) {
-    console.log('setting user ID')
+    console.log('setting user ID:', id)
     userID.value = id;
   }
 
@@ -33,7 +33,7 @@ export const useUserStore = defineStore('userStore', () => {
         const userDoc = querySnapshot.docs[0];
         const userData = userDoc.data();
         //userID.value = userData.id; // Replace with correct field if different
-  
+        console.log(userData)
         setUserID(userData.id); // Adjust for how you set the user ID
         return true;
       } else {
@@ -50,10 +50,9 @@ export const useUserStore = defineStore('userStore', () => {
   async function handleLogin(email, password) {
     if (email && password && isValidEmail(email)) {
       try {
-        if (validateUser(email)){
+        if (await validateUser(email)){
           const userCredential = await signInWithEmailAndPassword(auth, email, password)
-          const userID = userCredential.user.uid;
-          console.log(`Logged in as: ${userID}`)
+          console.log(`Logged in as: ${userID.value}`)
           router.push('/home')
         } else {
           log = false;

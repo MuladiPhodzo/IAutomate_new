@@ -1,5 +1,7 @@
 <template>
+  
   <q-layout view="lHh Lpr lFf">
+    <!--
     <q-header calss="header" elevated>
       <q-toolbar>
         <q-btn
@@ -16,24 +18,25 @@
         </q-toolbar-title>
       </q-toolbar>
     </q-header>
-
-    <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
-      boardered
-    >
+-->
+    <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
       <q-list>
-        <q-item-label header>
-          Profile
-        </q-item-label>
-
-        <EssentialLink
-          v-for="link in linksList"
-          :key="link.title"
-          v-bind="link"
-        />
-
-        
+        <q-item clickable v-ripple>
+          <q-item-section>Dashboard Home</q-item-section>
+        </q-item>
+        <q-item clickable v-ripple>
+          <q-item-section>Profile</q-item-section>
+        </q-item>
+        <q-item clickable v-ripple>
+          <q-item-section>accounts</q-item-section>
+        </q-item>
+        <q-item clickable v-ripple>
+          <q-item-section></q-item-section>
+        </q-item>
+        <q-item clickable v-ripple>
+          <q-item-section>Settings</q-item-section>
+        </q-item>
+        <!-- Add more items as needed -->
 
         <div class="user" align="bottom">
         <!-- User Email Display -->
